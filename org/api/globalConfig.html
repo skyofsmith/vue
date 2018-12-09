@@ -19,7 +19,11 @@
             }
         });
         Vue.config.slient = true;
-        
+        Vue.component({
+            data: {
+                msg: 'hello world!'
+            }
+        });
         var demo1 = new Vue({
             el: '#demo1',
             data: {
