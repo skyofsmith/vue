@@ -12,6 +12,14 @@
         {{msg}}
     </div>
     <script charset="utf-8">
+        console.log('Vue.config.slient = ' + Vue.config.slient);
+        Vue.component({
+            data: {
+                msg: 'hello world!'
+            }
+        });
+        Vue.config.slient = true;
+        
         var demo1 = new Vue({
             el: '#demo1',
             data: {
