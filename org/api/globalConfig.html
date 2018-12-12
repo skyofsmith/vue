@@ -9,27 +9,66 @@
 </head>
 <body>
     <div id="demo1">
-        {{msg}}
+        <ul>
+            <li v-for="l in list">
+                <label>
+                    {{l.name}}
+                    <input type="text" v-model="l.name">
+                </label>
+            </li>
+        </ul>
+    </div>
+    <div id="demo2">
+        <ul>
+            <li v-for="l in list">
+                <label>
+                    {{l.name}}
+                    <input type="text" v-model="l.name">
+                </label>
+            </li>
+        </ul>
     </div>
     <script charset="utf-8">
+        // silent
         console.log('Vue.config.slient = ' + Vue.config.slient);
-        Vue.component({
-            data: {
-                msg: 'hello world!'
-            }
-        });
-        Vue.config.slient = true;
-        Vue.component({
-            data: {
-                msg: 'hello world!'
-            }
-        });
         var demo1 = new Vue({
             el: '#demo1',
             data: {
-                msg: 'hello world!'
+                list: [
+                    {name: 'a'},
+                    {name: 'a'},
+                    {name: 'a'}
+                ]
             }
         });
+        Vue.config.slient = true;
+        console.log('Vue.config.slient = ' + Vue.config.slient);
+        var demo1 = new Vue({
+            el: '#demo2',
+            data: {
+                list: [
+                    {name: 'a'},
+                    {name: 'a'},
+                    {name: 'a'}
+                ]
+            }
+        });
+        
+        // optionMergeStrategies
+        Vue.config.optionMergeStrategies._my_option = function (parent, child, vm) {
+            console.log(parent, child, vm);
+            return child + 1
+        }
+
+        const Profile = Vue.extend({
+            _my_option: 1
+        })
+        console.log(Profile.options.__proto__.constructor);
+        
+        // devtools
+        console.log(Vue.config.devtools);
+        
+        
     </script>
 </body>
 </html>
