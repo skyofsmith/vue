@@ -68,6 +68,15 @@
         // devtools
         console.log(Vue.config.devtools);
         
+        // errorHandler
+        Vue.config.errorHandler = function (err, vm, info) {
+            console.log(err, vm, info);
+        };
+
+        // warnHandler
+        Vue.config.warnHandler = function (msg, vm, trace) {
+            console.log(msg, mv, trace);
+        };
         
     </script>
 </body>
