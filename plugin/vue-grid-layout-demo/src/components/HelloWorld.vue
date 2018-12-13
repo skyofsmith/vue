@@ -1,15 +1,15 @@
 <template>
   <div class="hello">
     <grid-layout
-            :layout.sync="layout"
-            :col-num='12'
-            :row-height='30'
-            :is-draggable="true"
-            :is-resizable="true"
-            :is-mirrored="false"
-            :vertical-compact="true"
-            :margin="[10, 10]"
-            :use-css-transforms="true"
+      :layout.sync="layout"
+      :col-num='12'
+      :row-height='30'
+      :is-draggable="true"
+      :is-resizable="true"
+      :is-mirrored="false"
+      :vertical-compact="true"
+      :margin="[10, 10]"
+      :use-css-transforms="true"
     >
       <grid-item v-for="item in layout" :key="item.i"
                   :x="item.x"

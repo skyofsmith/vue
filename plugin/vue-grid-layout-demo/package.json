@@ -1,5 +1,5 @@
 {
-  "name": "vue-grid-layout",
+  "name": "vue-grid-layout-demo",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "drzz <skyofsmith@163.com>",
@@ -10,7 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "vue": "^2.5.2"
+    "vue": "^2.5.2",
+    "vue-grid-layout": "^2.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
