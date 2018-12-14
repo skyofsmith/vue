@@ -12,11 +12,23 @@
 
 <body>
     <div id="app">
-        <p>
-            <router-link to="/user/foo">Go to Foo</router-link>
-            <router-link to="/user/bar">Go to Bar</router-link>
-        </p>
+        <ul>
+            <li><router-link to="/user/foo">Go to Foo</router-link></li>
+            <li><router-link to="/user/bar">Go to Bar</router-link></li>
+            <li><router-link to="/">/</router-link></li>
+            <li><router-link to="/params/foo/bar">/params/foo/bar</router-link></li>
+            <li><router-link to="/optional-params">/optional-params</router-link></li>
+            <li><router-link to="/optional-params/foo">/optional-params/foo</router-link></li>
+            <li><router-link to="/params-with-regex/123">/params-with-regex/123</router-link></li>
+            <li><router-link to="/params-with-regex/abc">/params-with-regex/abc</router-link></li>
+            <li><router-link to="/asterisk/foo">/asterisk/foo</router-link></li>
+            <li><router-link to="/asterisk/foo/bar">/asterisk/foo/bar</router-link></li>
+            <li><router-link to="/optional-group/bar">/optional-group/bar</router-link></li>
+            <li><router-link to="/optional-group/foo/bar">/optional-group/foo/bar</router-link></li>
+        </ul>
         <router-view></router-view>
+        <hr>
+        <pre>{{ JSON.stringify($route, null, 2) }}</pre>
     </div>
     <script type="text/javascript">
         const User = {
@@ -25,7 +37,13 @@
 
         const router = new VueRouter({
             routes: [
-                { path: '/user/:id', component: User }
+                { path: '/user/:id', component: User },
+                { path: '/' },
+               { path: '/params/:foo/:bar' },
+               { path: '/optional-params/:foo?' },
+               { path: '/params-with-regex/:id(\\d+)' },
+               { path: '/asterisk/*' },
+               { path: '/optional-group/(foo/)?bar' }
             ]
         })
 
