@@ -22,30 +22,45 @@
     <script type="text/javascript">
         const Foo = {
             template: '<div>foo</div>'
-        }
+        };
         const Bar = {
             template: '<div>bar</div>'
-        }
+        };
         const routes = [{
                 path: '/foo',
-                component: Foo
+                component: Foo,
+                beforeEnter: (to, from, next) => {
+                    console.log('beforeEnter', to, from);
+                    next();
+                    console.log('beforeEnter finished');
+                }
             },
             {
                 path: '/bar',
                 component: Bar
             }
-        ]
+        ];
 
         const router = new VueRouter({
             routes
-        })
+        });
         router.beforeEach((to, from, next) => {
-            console.log('beforeEach', to, from, next);
-        })
+            console.log('beforeEach', to, from);
+            next();
+            console.log('beforeEach finished');
+        });
+        router.beforeResolve((to, from, next) => {
+            console.log('beforeResolve', to, from);
+            next();
+            console.log('beforeResolve finished');
+        });
+        router.afterEach(() => {
+            console.log('afterEach');
+        });
         const app = new Vue({
             el: '#app',
             router,
-        })
+        });
     </script>
 </body>
 
