@@ -21,7 +21,19 @@
     </div>
     <script type="text/javascript">
         const Foo = {
-            template: '<div>foo</div>'
+            template: '<div>foo</div>',
+            beforeRouteEnter (to, from, next) {
+                console.log('beforeRouteEnter', to, from);
+                next();
+            },
+            beforeRouteUpdate (to, from, next) {
+                console.log('beforeRouteEnter', to, from);
+                next();
+            },
+            beforeRouteLeave (to, from, next) {
+                console.log('beforeRouteEnter', to, from);
+                next();
+            },
         };
         const Bar = {
             template: '<div>bar</div>'
