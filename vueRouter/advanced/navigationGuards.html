@@ -25,14 +25,20 @@
             beforeRouteEnter (to, from, next) {
                 console.log('beforeRouteEnter', to, from);
                 next();
+                console.log('this in beforeRouteEnter', this);
+                console.log('beforeRouteEnter finished');
             },
             beforeRouteUpdate (to, from, next) {
-                console.log('beforeRouteEnter', to, from);
+                console.log('beforeRouteUpdate', to, from);
                 next();
+                console.log('this in beforeRouteUpdate', this);
+                console.log('beforeRouteUpdate finished');
             },
             beforeRouteLeave (to, from, next) {
-                console.log('beforeRouteEnter', to, from);
+                console.log('beforeRouteLeave', to, from);
                 next();
+                console.log('this in beforeRouteLeave', this);
+                console.log('beforeRouteLeave finished');
             },
         };
         const Bar = {
