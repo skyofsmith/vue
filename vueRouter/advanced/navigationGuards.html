@@ -24,7 +24,9 @@
             template: '<div>foo</div>',
             beforeRouteEnter (to, from, next) {
                 console.log('beforeRouteEnter', to, from);
-                next();
+                next(app => {
+                    console.log('can deliver the vue object at function next\'s param', app);
+                });
                 console.log('this in beforeRouteEnter', this);
                 console.log('beforeRouteEnter finished');
             },
