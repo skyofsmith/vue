@@ -25,20 +25,24 @@
             beforeRouteEnter (to, from, next) {
                 console.log('beforeRouteEnter', to, from);
                 next(app => {
-                    console.log('can deliver the vue object at function next\'s param', app);
+                    console.log('can beforeRouteEnter\'s function nextdeliver the vue object at function next\'s param', app);
                 });
                 console.log('this in beforeRouteEnter', this);
                 console.log('beforeRouteEnter finished');
             },
             beforeRouteUpdate (to, from, next) {
                 console.log('beforeRouteUpdate', to, from);
-                next();
+                next(app => {
+                    console.log('can beforeRouteUpdate\'s function deliver the vue object at function next\'s param?', app);
+                });
                 console.log('this in beforeRouteUpdate', this);
                 console.log('beforeRouteUpdate finished');
             },
             beforeRouteLeave (to, from, next) {
                 console.log('beforeRouteLeave', to, from);
-                next();
+                next(app => {
+                    console.log('can beforeRouteLeave\'s function deliver the vue object at function next\'s param?', app);
+                });
                 console.log('this in beforeRouteLeave', this);
                 console.log('beforeRouteLeave finished');
             },
