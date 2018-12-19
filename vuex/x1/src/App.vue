@@ -1,17 +1,28 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    {{count}}
+    <button @click="add">Add</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import store from './store'
 
 export default {
   name: 'app',
+  store,
+  computed: {
+    count () {
+      return store.state.count
+    }
+  },
+  methods: {
+    add () {
+      store.commit('increment')
+    }
+  },
   components: {
-    HelloWorld
   }
 }
 </script>
