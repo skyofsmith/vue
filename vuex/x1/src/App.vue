@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
     {{count}}
     <button @click="add">Add</button>
     <button @click="dec">Dec</button>
