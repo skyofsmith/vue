@@ -3,23 +3,24 @@
     <img alt="Vue logo" src="./assets/logo.png">
     {{count}}
     <button @click="add">Add</button>
+    <button @click="dec">Dec</button>
   </div>
 </template>
 
 <script>
-import store from './store'
-
 export default {
   name: 'app',
-  store,
   computed: {
     count () {
-      return store.state.count
+      return this.$store.state.count
     }
   },
   methods: {
     add () {
-      store.commit('increment')
+      this.$store.commit('increment')
+    },
+    dec () {
+      this.$store.commit('decrement')
     }
   },
   components: {
