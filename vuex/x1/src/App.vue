@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'app',
   data () {
@@ -24,17 +26,13 @@ export default {
     this.name = this.$store.state.name
     this.age = this.$store.state.age
   },
-  computed: {
-    c () {
-      return this.$store.state.count
-    },
-    n () {
-      return this.$store.state.name
-    },
-    a () {
-      return this.$store.state.age
+  computed: mapState({
+    c: state => state.count,
+    n: 'name',
+    a (state) {
+      return state.age === this.age ? this.age : state.age
     }
-  },
+  }),
   methods: {
     add () {
       this.$store.commit('increment')
