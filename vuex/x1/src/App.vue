@@ -27,17 +27,16 @@ export default {
     this.name = this.$store.state.name
     this.age = this.$store.state.age
   },
-  computed: Object.assign(
-    {},
-    mapState({
-    c: state => state.count,
-    n: 'name',
-    a (state) {
-      return state.age === this.age ? this.age : state.age
-    }
-  }),
-  mapState(['gender'])
-  ),
+  computed: {
+    ...mapState({
+      c: state => state.count,
+      n: 'name',
+      a (state) {
+        return state.age === this.age ? this.age : state.age
+      }
+    }),
+    ...mapState(['gender'])
+  },
   methods: {
     add () {
       this.$store.commit('increment')
