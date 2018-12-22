@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     count: 0,
     name: 'sam',
-    age: 27
+    age: 27,
+    gender: 'M'
   },
   mutations: {
     increment (state) {
@@ -21,6 +22,9 @@ export default new Vuex.Store({
     },
     setAge (state, newAge) {
       state.age = newAge
+    },
+    setGender (state, newGender) {
+      state.gender = newGender
     }
   },
   actions: {

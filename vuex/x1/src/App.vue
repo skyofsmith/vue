@@ -3,6 +3,7 @@
     {{c}}
     <button @click="add">Add</button>
     <button @click="dec">Dec</button>
+    {{gender}}
     <hr>
     {{n}}
     <input type="text" v-model="name" @change="nameChange">
@@ -26,13 +27,17 @@ export default {
     this.name = this.$store.state.name
     this.age = this.$store.state.age
   },
-  computed: mapState({
+  computed: Object.assign(
+    {},
+    mapState({
     c: state => state.count,
     n: 'name',
     a (state) {
       return state.age === this.age ? this.age : state.age
     }
   }),
+  mapState(['gender'])
+  ),
   methods: {
     add () {
       this.$store.commit('increment')
