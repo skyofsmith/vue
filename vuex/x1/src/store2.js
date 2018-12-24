@@ -5,27 +5,21 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 0,
-    name: 'sam',
-    age: 27,
-    gender: 'M'
+    todos: [
+      { id: 1, text: '...', done: true },
+      { id: 2, text: '...', done: false }
+    ]
+  },
+  getters: {
+    doneTodos: state => {
+      return state.todos.filter(todo => todo.done)
+    },
+    // doneTodosCount: (state, getters) => {
+    //   return getters.doneTodos.length
+    // }
   },
   mutations: {
-    increment (state) {
-      state.count++
-    },
-    decrement (state) {
-      state.count--
-    },
-    setName (state, newName) {
-      state.name = newName
-    },
-    setAge (state, newAge) {
-      state.age = newAge
-    },
-    setGender (state, newGender) {
-      state.gender = newGender
-    }
+    
   },
   actions: {
 
