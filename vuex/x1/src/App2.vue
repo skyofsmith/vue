@@ -1,10 +1,14 @@
 <template>
   <div id="app2">
-    {{msg}}
     <br>
-    <!-- doneTodosCount: {{doneTodosCount}} -->
+    <p>
+      doneTodosCount: {{doneTodosCount}}
+    </p>
     <br>
-    doneTodos: {{doneTodos}}
+    <p>
+      doneTodos: 
+      <pre>{{doneTodos}}</pre>
+    </p>
   </div>
 </template>
 
@@ -14,15 +18,17 @@ export default {
   name: 'app2',
   data () {
     return {
-      msg: 'hello'
     }
   },
   computed: {
+    // doneTodosCount () {
+    //   return this.$store.state.todos.filter(todo => todo.done).length
+    // },
     doneTodos () {
       return this.$store.getters.doneTodos
     },
     doneTodosCount () {
-      // return this.$store.getters.doneTodosCount
+      return this.$store.getters.doneTodosCount
     },
   }
 }
