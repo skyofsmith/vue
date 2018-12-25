@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'app2',
@@ -24,12 +25,19 @@ export default {
     // doneTodosCount () {
     //   return this.$store.state.todos.filter(todo => todo.done).length
     // },
+    /*
     doneTodos () {
       return this.$store.getters.doneTodos
     },
     doneTodosCount () {
       return this.$store.getters.doneTodosCount
     },
+    */
+    // ...mapGetters(['doneTodos', 'doneTodosCount'])
+    ...mapGetters({
+      doneTodos: 'doneTodos',
+      doneTodosCount: 'doneTodosCount'
+    })
   }
 }
 </script>
@@ -39,7 +47,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
 }
