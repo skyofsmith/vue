@@ -2,16 +2,20 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <hr>
+    <UseCreate></UseCreate>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import UseCreate from './components/useCreate.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    UseCreate
   }
 }
 </script>

@@ -1,0 +1,9 @@
+{
+    "data": {
+        "hello": "again"
+    },
+    "status": 200,
+    "statusText": "OK",
+    "headers": {},
+    "config": {}
+}

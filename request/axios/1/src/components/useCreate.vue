@@ -6,21 +6,32 @@
 
 <script>
 import axios from "axios";
+
+axios.defaults.headers.common['Authorization'] = 'skyofsmith';
+axios.defaults.headers.post['X-Post'] = 'sam-post';
+axios.defaults.headers.get['X-Get'] = 'sam-get';
+const ax = axios.create({
+  baseURL: '/static/mocks/',
+  headers: {
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-Auth': 'Sam Zz'
+  },
+})
 window.console.log(axios);
 
 export default {
-  name: 'HelloWorld',
+  name: 'UseCreate',
   props: {
     msg: String
   },
   mounted () {
-    axios.get('/static/mocks/a.json').then((ret) => {
+    ax.get('/a').then((ret) => {
       window.console.log(ret);
     }, err => {
       window.console.log(err);
     })
     
-    axios.post('/static/mocks/b.json').then((ret) => {
+    ax.post('/b').then((ret) => {
       window.console.log(ret);
     }, err => {
       window.console.log(err);
