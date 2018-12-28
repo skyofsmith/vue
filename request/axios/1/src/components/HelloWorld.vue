@@ -14,13 +14,13 @@ export default {
     msg: String
   },
   mounted () {
-    axios.get('/static/mocks/a.json').then((ret) => {
+    axios.get('/api/a').then((ret) => {
       window.console.log(ret);
     }, err => {
       window.console.log(err);
     })
     
-    axios.post('/static/mocks/b.json').then((ret) => {
+    axios.post('/api/b').then((ret) => {
       window.console.log(ret);
     }, err => {
       window.console.log(err);

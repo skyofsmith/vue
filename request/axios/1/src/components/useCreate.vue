@@ -11,13 +11,19 @@ axios.defaults.headers.common['Authorization'] = 'skyofsmith';
 axios.defaults.headers.post['X-Post'] = 'sam-post';
 axios.defaults.headers.get['X-Get'] = 'sam-get';
 const ax = axios.create({
-  baseURL: '/static/mocks/',
+  baseURL: '/api',
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
     'X-Auth': 'Sam Zz'
   },
 })
 window.console.log(axios);
+ax.interceptors.response.use((ret) => {
+  if (ret.data) {
+    ret = ret.data
+  }
+  return ret
+})
 
 export default {
   name: 'UseCreate',
