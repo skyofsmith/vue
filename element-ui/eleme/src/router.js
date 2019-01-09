@@ -21,12 +21,12 @@ export default new Router({
       name: 'basic',
       component: Basic,
       children: [
-        { path: 'layout', component: Layout},
-        { path: 'container', component: Container},
-        { path: 'color', component: Color},
-        { path: 'typography', component: Typography},
-        { path: 'icon', component: Icon},
-        { path: 'button', component: Button},
+        { path: 'layout', component: Layout },
+        { path: 'container', component: Container },
+        { path: 'color', component: Color },
+        { path: 'typography', component: Typography },
+        { path: 'icon', component: Icon },
+        { path: 'button', component: Button },
       ]
     }
   ]
