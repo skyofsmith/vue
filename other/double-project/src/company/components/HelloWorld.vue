@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}default</h1>
+    <h1>{{ msg }}company</h1>
   </div>
 </template>
 

@@ -1,7 +1,17 @@
 'use strict'
 require('./check-versions')()
+const portal = require('../config/portal.config')
 
 process.env.NODE_ENV = 'production'
+const portalName = process.argv[2]
+if (portalName !== undefined && typeof(portalName) === 'string') {
+  if (!portal.hasPortal(portalName)) {
+    console.error(`portal ${portalName} isn't exist, please check your param!`)
+    return
+  } else {
+    process.env.PORTAL = portalName
+  }
+}
 
 const ora = require('ora')
 const rm = require('rimraf')

@@ -3,13 +3,30 @@ const currentPortal = 'default'
 
 const configs = {
   default: {
-    path: 'default',
-    desc: '默认'
+    desc: '默认',
+    srcDir: 'default',
+    distDir: 'default',
+    publistPath: ''
   },
-  yuan1: {
-    path: 'yuan1',
-    desc: '一院'
+  company: {
+    desc: '一院',
+    srcDir: 'company',
+    distDir: 'company',
+    publistPath: ''
   }
 }
 
-module.exports = configs[currentPortal].path
+const getPropFunc = function (propName) {
+  return function () {
+    const portal = process.env.PORTAL || currentPortal
+    return configs[portal][propName]
+  }
+}
+
+exports.srcDir = getPropFunc('srcDir')
+exports.distDir = getPropFunc('distDir')
+exports.publistPath = getPropFunc('publistPath')
+exports.portals = Object.keys(configs)
+exports.hasPortal = function hasPortal (portalName) {
+  return configs[portalName] !== undefined
+}

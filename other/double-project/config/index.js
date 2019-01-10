@@ -3,6 +3,8 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+const portal = require('../config/portal.config')
+const dist = '../dist/' + portal.distDir()
 
 module.exports = {
   dev: {
@@ -45,12 +47,12 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, dist + '/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, dist),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: portal.publistPath(),
 
     /**
      * Source Maps

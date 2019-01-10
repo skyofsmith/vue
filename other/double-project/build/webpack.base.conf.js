@@ -3,9 +3,9 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-const portalPath = require('../config/portal.config')
+const portal = require('../config/portal.config')
 
-const src = 'src/' + portalPath
+const src = 'src/' + portal.srcDir()
 console.log('src is: ' + src)
 
 function resolve (dir) {
