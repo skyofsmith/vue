@@ -1,5 +1,7 @@
 'use strict'
 const currentPortal = 'default'
+const path = require('path')
+const utils = require('../build/utils')
 
 const configs = {
   default: {
@@ -35,6 +37,17 @@ exports.entrys = ((portals) => {
   const res = {}
   portals.forEach(p => {
     res[p] = './src' + configs[p].srcDir + '/main.js'
+  })
+  return res
+})(portals)
+exports.outputs = (portals => {
+  const res = {}
+  portals.forEach(p => {
+    res[p] = {
+      path: path.resolve(__dirname, '../dist/' + portals.configs[p].distDir),
+      filename: utils.assetsPath('js/[name].[chunkhash].js'),
+      chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
+    }
   })
   return res
 })(portals)

@@ -26,18 +26,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     })
   },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
-  output: (portals => {
-    const res = {}
-    const configs = portals.configs
-    portals.forEach(p => {
-      res[p] = {
-        path: path.resolve(__dirname, '../dist/' + portals.configs[p].distDir),
-        filename: utils.assetsPath('js/[name].[chunkhash].js'),
-        chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
-      }
-    })
-    return res
-  })(portal.portals),
+  output: portal.outputs,
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
