@@ -10,6 +10,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const portal = require('../config/portal.config')
+
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -24,11 +26,18 @@ const webpackConfig = merge(baseWebpackConfig, {
     })
   },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
-  output: {
-    path: config.build.assetsRoot,
-    filename: utils.assetsPath('js/[name].[chunkhash].js'),
-    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
-  },
+  output: (portals => {
+    const res = {}
+    const configs = portals.configs
+    portals.forEach(p => {
+      res[p] = {
+        path: path.resolve(__dirname, '../dist/' + portals.configs[p].distDir),
+        filename: utils.assetsPath('js/[name].[chunkhash].js'),
+        chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
+      }
+    })
+    return res
+  })(portal.portals),
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({

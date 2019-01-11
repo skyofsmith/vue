@@ -22,11 +22,19 @@ const getPropFunc = function (propName) {
     return configs[portal][propName]
   }
 }
+const portals = Object.keys(configs)
 
 exports.srcDir = getPropFunc('srcDir')
 exports.distDir = getPropFunc('distDir')
 exports.publistPath = getPropFunc('publistPath')
-exports.portals = Object.keys(configs)
+exports.portals = portals
 exports.hasPortal = function hasPortal (portalName) {
   return configs[portalName] !== undefined
 }
+exports.entrys = ((portals) => {
+  const res = {}
+  portals.forEach(p => {
+    res[p] = './src' + configs[p].srcDir + '/main.js'
+  })
+  return res
+})(portals)
