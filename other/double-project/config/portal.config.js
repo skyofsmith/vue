@@ -44,7 +44,7 @@ exports.outputs = (portals => {
   const res = {}
   portals.forEach(p => {
     res[p] = {
-      path: path.resolve(__dirname, '../dist/' + portals.configs[p].distDir),
+      path: path.resolve(__dirname, '../dist/' + configs[p].distDir),
       filename: utils.assetsPath('js/[name].[chunkhash].js'),
       chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
     }
