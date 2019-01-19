@@ -13,10 +13,16 @@ html, body {
 }
 #nav {
   height: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   background-color: darkkhaki;
 }
 #content {
   height: calc(100% - 20px);
+  margin-top: 20px;
 }
 </style>
 <template>

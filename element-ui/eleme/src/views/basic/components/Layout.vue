@@ -28,11 +28,18 @@
   padding: 10px 0;
   background-color: #f9fafc;
 }
+.gutter,
+.mix,
+.offset,
+.justify,
+.responsive {
+  overflow: hidden;
+}
 </style>
 
 <template>
   <div>
-    <div>layout</div>
+    <h1>layout</h1>
     <h4>base</h4>
     <div class="base">
       <el-row>
@@ -232,7 +239,158 @@
         </el-col>
       </el-row>
     </div>
-    <div class></div>
+    <h4>gutter</h4>
+    <div class="gutter">
+      <el-row :gutter="20">
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+      </el-row>
+    </div>
+    <h4>mix layout</h4>
+    <div class="mix">
+      <el-row :gutter="20">
+        <el-col :span="16">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="8">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="8">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="8">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="4">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="4">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="4">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="16">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="4">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+      </el-row>
+    </div>
+    <h4>offset</h4>
+    <div class="offset">
+      <el-row :gutter="20">
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="6" :offset="6">
+          <div class="grid-content bg-purple">offset=6</div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="6" :offset="6">
+          <div class="grid-content bg-purple">offset=6</div>
+        </el-col>
+        <el-col :span="6" :offset="6">
+          <div class="grid-content bg-purple">offset=6</div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="12" :offset="6">
+          <div class="grid-content bg-purple">offset=6</div>
+        </el-col>
+      </el-row>
+    </div>
+    <h4>justify</h4>
+    <div class="justify">
+      <el-row type="flex" class="row-bg">
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+      </el-row>
+      <el-row type="flex" class="row-bg" justify="center">
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+      </el-row>
+      <el-row type="flex" class="row-bg" justify="end">
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+      </el-row>
+      <el-row type="flex" class="row-bg" justify="space-between">
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+      </el-row>
+      <el-row type="flex" class="row-bg" justify="space-around">
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+        <el-col :span="6">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+      </el-row>
+    </div>
+    <h4>responsive</h4>
+    <div class="responsive">
+      <el-row :gutter="10">
+        <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+        <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+          <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+          <div class="grid-content bg-purple-light"></div>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
