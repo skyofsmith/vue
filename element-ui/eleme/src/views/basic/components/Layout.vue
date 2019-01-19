@@ -232,12 +232,15 @@
         </el-col>
       </el-row>
     </div>
-    <div class="">
-
-    </div>
+    <div class></div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Layout",
+  data() {
+    return {};
+  }
+};
 </script>
