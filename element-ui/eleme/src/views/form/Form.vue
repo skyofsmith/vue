@@ -26,20 +26,29 @@
 <template>
   <div class="basic">
     <div class="nav">
-      <router-link class="nav-item" to="/basic/layout">Layout 布局</router-link>
-      <router-link class="nav-item" to="/basic/container">Container 布局容器</router-link>
-      <router-link class="nav-item" to="/basic/color">Color 色彩</router-link>
-      <router-link class="nav-item" to="/basic/typography">Typography 字体</router-link>
-      <router-link class="nav-item" to="/basic/icon">Icon 图标</router-link>
-      <router-link class="nav-item" to="/basic/button">Button 按钮</router-link>
+      <router-link class="nav-item" to="/form/radio">Radio 单选框</router-link>
+      <router-link class="nav-item" to="/form/checkbox">Checkbox 多选框</router-link>
+      <router-link class="nav-item" to="/form/input">Input 输入框</router-link>
+      <router-link class="nav-item" to="/form/inputnumber">InputNumber 计数器</router-link>
+      <router-link class="nav-item" to="/form/radio">Select 选择器</router-link>
+      <router-link class="nav-item" to="/form/radio">Cascader 级联选择器</router-link>
+      <router-link class="nav-item" to="/form/radio">Switch 开关</router-link>
+      <router-link class="nav-item" to="/form/radio">Slider 滑块</router-link>
+      <router-link class="nav-item" to="/form/radio">TimePicker 时间选择器</router-link>
+      <router-link class="nav-item" to="/form/radio">DatePicker 日期选择器</router-link>
+      <router-link class="nav-item" to="/form/radio">DateTimePicker 日期时间选择器</router-link>
+      <router-link class="nav-item" to="/form/radio">Upload 上传</router-link>
+      <router-link class="nav-item" to="/form/radio">Rate 评分</router-link>
+      <router-link class="nav-item" to="/form/radio">ColorPicker 颜色选择器</router-link>
+      <router-link class="nav-item" to="/form/radio">Transfer 穿梭框</router-link>
+      <router-link class="nav-item" to="/form/radio">Form 表单</router-link>
     </div>
     <router-view class="content"></router-view>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Basic'
-}
+  name: "Form"
+};
 </script>
