@@ -12,6 +12,7 @@ import Button from './views/basic/components/Button.vue'
 import Form from './views/form/Form'
 import Radio from './views/form/components/Radio'
 import Checkbox from './views/form/components/Checkbox'
+import Input from './views/form/components/Input'
 
 Vue.use(Router)
 
@@ -64,7 +65,7 @@ export default new Router({
     },
     {
       path: 'input',
-      component: Checkbox
+      component: Input
     },
 
     ]
