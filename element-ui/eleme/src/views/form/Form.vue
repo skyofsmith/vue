@@ -30,7 +30,7 @@
       <router-link class="nav-item" to="/form/checkbox">Checkbox 多选框</router-link>
       <router-link class="nav-item" to="/form/input">Input 输入框</router-link>
       <router-link class="nav-item" to="/form/inputnumber">InputNumber 计数器</router-link>
-      <router-link class="nav-item" to="/form/radio">Select 选择器</router-link>
+      <router-link class="nav-item" to="/form/select">Select 选择器</router-link>
       <router-link class="nav-item" to="/form/radio">Cascader 级联选择器</router-link>
       <router-link class="nav-item" to="/form/radio">Switch 开关</router-link>
       <router-link class="nav-item" to="/form/radio">Slider 滑块</router-link>
