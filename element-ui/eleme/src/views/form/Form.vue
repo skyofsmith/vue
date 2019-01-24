@@ -31,17 +31,17 @@
       <router-link class="nav-item" to="/form/input">Input 输入框</router-link>
       <router-link class="nav-item" to="/form/inputnumber">InputNumber 计数器</router-link>
       <router-link class="nav-item" to="/form/select">Select 选择器</router-link>
-      <router-link class="nav-item" to="/form/radio">Cascader 级联选择器</router-link>
-      <router-link class="nav-item" to="/form/radio">Switch 开关</router-link>
-      <router-link class="nav-item" to="/form/radio">Slider 滑块</router-link>
-      <router-link class="nav-item" to="/form/radio">TimePicker 时间选择器</router-link>
-      <router-link class="nav-item" to="/form/radio">DatePicker 日期选择器</router-link>
-      <router-link class="nav-item" to="/form/radio">DateTimePicker 日期时间选择器</router-link>
-      <router-link class="nav-item" to="/form/radio">Upload 上传</router-link>
-      <router-link class="nav-item" to="/form/radio">Rate 评分</router-link>
-      <router-link class="nav-item" to="/form/radio">ColorPicker 颜色选择器</router-link>
-      <router-link class="nav-item" to="/form/radio">Transfer 穿梭框</router-link>
-      <router-link class="nav-item" to="/form/radio">Form 表单</router-link>
+      <router-link class="nav-item" to="/form/cascader">Cascader 级联选择器</router-link>
+      <router-link class="nav-item" to="/form/switch">Switch 开关</router-link>
+      <router-link class="nav-item" to="/form/slider">Slider 滑块</router-link>
+      <router-link class="nav-item" to="/form/timepicker">TimePicker 时间选择器</router-link>
+      <router-link class="nav-item" to="/form/datepicker">DatePicker 日期选择器</router-link>
+      <router-link class="nav-item" to="/form/datetimepicker">DateTimePicker 日期时间选择器</router-link>
+      <router-link class="nav-item" to="/form/upload">Upload 上传</router-link>
+      <router-link class="nav-item" to="/form/rate">Rate 评分</router-link>
+      <router-link class="nav-item" to="/form/colorpicker">ColorPicker 颜色选择器</router-link>
+      <router-link class="nav-item" to="/form/transfer">Transfer 穿梭框</router-link>
+      <router-link class="nav-item" to="/form/form">Form 表单</router-link>
     </div>
     <router-view class="content"></router-view>
   </div>
