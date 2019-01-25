@@ -16,6 +16,7 @@ import Input from './views/form/components/Input'
 import InputNumber from './views/form/components/InputNumber'
 import Select from './views/form/components/Select'
 import Cascader from './views/form/components/Cascader'
+import Switch from './views/form/components/Switch'
 
 Vue.use(Router)
 
@@ -81,6 +82,10 @@ export default new Router({
     {
       path: 'cascader',
       component: Cascader
+    },
+    {
+      path: 'switch',
+      component: Switch
     },
 
     ]
