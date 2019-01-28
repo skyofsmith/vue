@@ -18,6 +18,8 @@ import Select from './views/form/components/Select'
 import Cascader from './views/form/components/Cascader'
 import Switch from './views/form/components/Switch'
 import Slider from './views/form/components/Slider'
+import TimePicker from './views/form/components/TimePicker'
+import DatePicker from './views/form/components/DatePicker'
 
 Vue.use(Router)
 
@@ -92,7 +94,14 @@ export default new Router({
       path: 'slider',
       component: Slider
     },
-
+    {
+      path: 'timepicker',
+      component: TimePicker
+    },
+    {
+      path: 'datepicker',
+      component: DatePicker
+    },
     ]
   }
   ]
