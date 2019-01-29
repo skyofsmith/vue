@@ -20,6 +20,7 @@ import Switch from './views/form/components/Switch'
 import Slider from './views/form/components/Slider'
 import TimePicker from './views/form/components/TimePicker'
 import DatePicker from './views/form/components/DatePicker'
+import DateTimePicker from './views/form/components/DateTimePicker'
 
 Vue.use(Router)
 
@@ -101,6 +102,10 @@ export default new Router({
     {
       path: 'datepicker',
       component: DatePicker
+    },
+    {
+      path: 'datetimepicker',
+      component: DateTimePicker
     },
     ]
   }
