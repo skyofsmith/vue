@@ -21,6 +21,7 @@ import Slider from './views/form/components/Slider'
 import TimePicker from './views/form/components/TimePicker'
 import DatePicker from './views/form/components/DatePicker'
 import DateTimePicker from './views/form/components/DateTimePicker'
+import Upload from './views/form/components/Upload'
 
 Vue.use(Router)
 
@@ -106,6 +107,10 @@ export default new Router({
     {
       path: 'datetimepicker',
       component: DateTimePicker
+    },
+    {
+      path: 'upload',
+      component: Upload
     },
     ]
   }
