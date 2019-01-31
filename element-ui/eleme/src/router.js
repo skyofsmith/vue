@@ -24,6 +24,7 @@ import DateTimePicker from './views/form/components/DateTimePicker'
 import Upload from './views/form/components/Upload'
 import Rate from './views/form/components/Rate'
 import ColorPicker from './views/form/components/ColorPicker'
+import Transfer from './views/form/components/Transfer'
 
 Vue.use(Router)
 
@@ -121,6 +122,10 @@ export default new Router({
     {
       path: 'colorpicker',
       component: ColorPicker
+    },
+    {
+      path: 'transfer',
+      component: Transfer
     },
     ]
   }
