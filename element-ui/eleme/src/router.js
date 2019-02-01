@@ -127,6 +127,11 @@ export default new Router({
       path: 'transfer',
       component: Transfer
     },
+    {
+      path: 'form',
+      component: (resolve) => require(['./views/form/components/Form'], resolve)
+      // component: () => import('./views/form/components/Form')
+    },
     ]
   }
   ]
