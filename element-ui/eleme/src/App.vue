@@ -29,7 +29,8 @@ html, body {
   <div id="app">
     <div id="nav">
       <router-link to="/basic">Basic</router-link> |
-      <router-link to="/form">Form</router-link>
+      <router-link to="/form">Form</router-link> |
+      <router-link to="/data">Data</router-link> |  
     </div>
     <router-view id="content"/>
   </div>

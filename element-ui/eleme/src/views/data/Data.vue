@@ -1,4 +1,4 @@
-<style scoped>
+<style lang="postcss" scoped>
 .basic {
   display: flex;
   flex-basis: row;
