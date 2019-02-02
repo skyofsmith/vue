@@ -133,6 +133,15 @@ export default new Router({
       // component: () => import('./views/form/components/Form')
     },
     ]
+  },
+  {
+
+    path: '/data',
+    component: (resolve) => require(['./views/data/Data'], resolve),
+    children: [{
+      path: 'table',
+      component: (resolve) => require(['./views/data/components/Table'], resolve),
+    }]
   }
   ]
 })
