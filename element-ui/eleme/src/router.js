@@ -141,6 +141,9 @@ export default new Router({
     children: [{
       path: 'table',
       component: (resolve) => require(['./views/data/components/Table'], resolve),
+    }, {
+      path: 'tag',
+      component: (resolve) => require(['./views/data/components/Tag'], resolve),
     }]
   }
   ]
