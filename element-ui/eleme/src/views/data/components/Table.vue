@@ -5,6 +5,18 @@
 .el-table .success-row {
   background: #f0f9eb;
 }
+.demo-table-expand {
+  font-size: 0;
+}
+.demo-table-expand label {
+  width: 90px;
+  color: #99a9bf;
+}
+.demo-table-expand .el-form-item {
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 50%;
+}
 </style>
 
 <template>
@@ -224,6 +236,123 @@
             <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
           </template>
         </el-table-column>
+      </el-table>
+    </div>
+    <h4>expand row</h4>
+    <div class="expand-row">
+      <el-table :data="tableData5" style="width: 100%">
+        <el-table-column type="expand">
+          <template slot-scope="props">
+            <el-form label-position="left" inline class="demo-table-expand">
+              <el-form-item label="商品名称">
+                <span>{{ props.row.name }}</span>
+              </el-form-item>
+              <el-form-item label="所属店铺">
+                <span>{{ props.row.shop }}</span>
+              </el-form-item>
+              <el-form-item label="商品 ID">
+                <span>{{ props.row.id }}</span>
+              </el-form-item>
+              <el-form-item label="店铺 ID">
+                <span>{{ props.row.shopId }}</span>
+              </el-form-item>
+              <el-form-item label="商品分类">
+                <span>{{ props.row.category }}</span>
+              </el-form-item>
+              <el-form-item label="店铺地址">
+                <span>{{ props.row.address }}</span>
+              </el-form-item>
+              <el-form-item label="商品描述">
+                <span>{{ props.row.desc }}</span>
+              </el-form-item>
+            </el-form>
+          </template>
+        </el-table-column>
+        <el-table-column label="商品 ID" prop="id"></el-table-column>
+        <el-table-column label="商品名称" prop="name"></el-table-column>
+        <el-table-column label="描述" prop="desc"></el-table-column>
+      </el-table>
+    </div>
+    <h4>custom header</h4>
+    <div class="custom-header">
+      <el-table
+        :data="tableData7.filter(data => !search || data.name.toLowerCase().includes(search.toLowerCase()))"
+        style="width: 100%"
+      >
+        <el-table-column label="Date" prop="date"></el-table-column>
+        <el-table-column label="Name" prop="name"></el-table-column>
+        <el-table-column align="right">
+          <template slot="header" slot-scope="scope">
+            <el-input v-model="search" size="mini" placeholder="输入关键字搜索"/>
+          </template>
+          <template slot-scope="scope">
+            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
+            <el-button
+              size="mini"
+              type="danger"
+              @click="handleDelete(scope.$index, scope.row)"
+            >Delete</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
+    <h4>footer</h4>
+    <div class="footer">
+      <el-table :data="tableData6" border show-summary style="width: 100%">
+        <el-table-column prop="id" label="ID" width="180"></el-table-column>
+        <el-table-column prop="name" label="姓名"></el-table-column>
+        <el-table-column prop="amount1" sortable label="数值 1"></el-table-column>
+        <el-table-column prop="amount2" sortable label="数值 2"></el-table-column>
+        <el-table-column prop="amount3" sortable label="数值 3"></el-table-column>
+      </el-table>
+
+      <el-table
+        :data="tableData6"
+        border
+        height="200"
+        :summary-method="getSummaries"
+        show-summary
+        style="width: 100%; margin-top: 20px"
+      >
+        <el-table-column prop="id" label="ID" width="180"></el-table-column>
+        <el-table-column prop="name" label="姓名"></el-table-column>
+        <el-table-column prop="amount1" label="数值 1（元）"></el-table-column>
+        <el-table-column prop="amount2" label="数值 2（元）"></el-table-column>
+        <el-table-column prop="amount3" label="数值 3（元）"></el-table-column>
+      </el-table>
+    </div>
+    <h4>combine row or column</h4>
+    <div class="combine">
+      <div>
+        <el-table :data="tableData6" :span-method="arraySpanMethod" border style="width: 100%">
+          <el-table-column prop="id" label="ID" width="180"></el-table-column>
+          <el-table-column prop="name" label="姓名"></el-table-column>
+          <el-table-column prop="amount1" sortable label="数值 1"></el-table-column>
+          <el-table-column prop="amount2" sortable label="数值 2"></el-table-column>
+          <el-table-column prop="amount3" sortable label="数值 3"></el-table-column>
+        </el-table>
+
+        <el-table
+          :data="tableData6"
+          :span-method="objectSpanMethod"
+          border
+          style="width: 100%; margin-top: 20px"
+        >
+          <el-table-column prop="id" label="ID" width="180"></el-table-column>
+          <el-table-column prop="name" label="姓名"></el-table-column>
+          <el-table-column prop="amount1" label="数值 1（元）"></el-table-column>
+          <el-table-column prop="amount2" label="数值 2（元）"></el-table-column>
+          <el-table-column prop="amount3" label="数值 3（元）"></el-table-column>
+        </el-table>
+      </div>
+    </div>
+    <h4>costum-row-number</h4>
+    <div class="custom-row-number">
+      <el-table :data="tableData" style="width: 100%">
+        <el-table-column type="index" :index="indexMethod"></el-table-column>
+        <el-table-column prop="date" label="日期" width="180"></el-table-column>
+        <el-table-column prop="name" label="姓名" width="180"></el-table-column>
+        <el-table-column prop="address" label="地址"></el-table-column>
       </el-table>
     </div>
   </div>
@@ -464,7 +593,105 @@ export default {
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
         }
-      ]
+      ],
+      tableData5: [
+        {
+          id: '12987122',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        },
+        {
+          id: '12987123',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        },
+        {
+          id: '12987125',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        },
+        {
+          id: '12987126',
+          name: '好滋好味鸡蛋仔',
+          category: '江浙小吃、小吃零食',
+          desc: '荷兰优质淡奶，奶香浓而不腻',
+          address: '上海市普陀区真北路',
+          shop: '王小虎夫妻店',
+          shopId: '10333'
+        }
+      ],
+      tableData6: [
+        {
+          id: '12987122',
+          name: '王小虎',
+          amount1: '234',
+          amount2: '3.2',
+          amount3: 10
+        },
+        {
+          id: '12987123',
+          name: '王小虎',
+          amount1: '165',
+          amount2: '4.43',
+          amount3: 12
+        },
+        {
+          id: '12987124',
+          name: '王小虎',
+          amount1: '324',
+          amount2: '1.9',
+          amount3: 9
+        },
+        {
+          id: '12987125',
+          name: '王小虎',
+          amount1: '621',
+          amount2: '2.2',
+          amount3: 17
+        },
+        {
+          id: '12987126',
+          name: '王小虎',
+          amount1: '539',
+          amount2: '4.1',
+          amount3: 15
+        }
+      ],
+      tableData7: [
+        {
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1517 弄'
+        },
+        {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1519 弄'
+        },
+        {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1516 弄'
+        }
+      ],
+      search: ''
     }
   },
   methods: {
@@ -524,6 +751,60 @@ export default {
     },
     handleDelete(index, row) {
       console.log(index, row)
+    },
+    getSummaries(param) {
+      const { columns, data } = param
+      const sums = []
+      columns.forEach((column, index) => {
+        if (index === 0) {
+          sums[index] = '总价'
+          return
+        }
+        const values = data.map(item => Number(item[column.property]))
+        if (!values.every(value => isNaN(value))) {
+          sums[index] = values.reduce((prev, curr) => {
+            const value = Number(curr)
+            if (!isNaN(value)) {
+              return prev + curr
+            } else {
+              return prev
+            }
+          }, 0)
+          sums[index] += ' 元'
+        } else {
+          sums[index] = 'N/A'
+        }
+      })
+
+      return sums
+    },
+    arraySpanMethod({ row, column, rowIndex, columnIndex }) {
+      if (rowIndex % 2 === 0) {
+        if (columnIndex === 0) {
+          return [1, 2]
+        } else if (columnIndex === 1) {
+          return [0, 0]
+        }
+      }
+    },
+
+    objectSpanMethod({ row, column, rowIndex, columnIndex }) {
+      if (columnIndex === 0) {
+        if (rowIndex % 2 === 0) {
+          return {
+            rowspan: 2,
+            colspan: 1
+          }
+        } else {
+          return {
+            rowspan: 0,
+            colspan: 0
+          }
+        }
+      }
+    },
+    indexMethod(index) {
+      return index * 2
     }
   }
 }
