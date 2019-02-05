@@ -138,13 +138,24 @@ export default new Router({
 
     path: '/data',
     component: (resolve) => require(['./views/data/Data'], resolve),
-    children: [{
-      path: 'table',
-      component: (resolve) => require(['./views/data/components/Table'], resolve),
-    }, {
-      path: 'tag',
-      component: (resolve) => require(['./views/data/components/Tag'], resolve),
-    }]
+    children: [
+      {
+        path: 'table',
+        component: (resolve) => require(['./views/data/components/Table'], resolve),
+      },
+      {
+        path: 'tag',
+        component: (resolve) => require(['./views/data/components/Tag'], resolve),
+      },
+      {
+        path: 'progress',
+        component: (resolve) => require(['./views/data/components/Progress'], resolve),
+      },
+      {
+        path: 'tree',
+        component: (resolve) => require(['./views/data/components/Tree'], resolve),
+      }
+    ]
   }
   ]
 })
