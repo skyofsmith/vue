@@ -154,6 +154,10 @@ export default new Router({
       {
         path: 'tree',
         component: (resolve) => require(['./views/data/components/Tree'], resolve),
+      },
+      {
+        path: 'pagination',
+        component: (resolve) => require(['./views/data/components/Pagination'], resolve),
       }
     ]
   }
