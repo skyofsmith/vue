@@ -158,6 +158,10 @@ export default new Router({
       {
         path: 'pagination',
         component: (resolve) => require(['./views/data/components/Pagination'], resolve),
+      },
+      {
+        path: 'badge',
+        component: (resolve) => require(['./views/data/components/Badge'], resolve),
       }
     ]
   }
