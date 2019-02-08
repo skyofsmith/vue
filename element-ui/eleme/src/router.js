@@ -135,33 +135,46 @@ export default new Router({
     ]
   },
   {
-
     path: '/data',
     component: (resolve) => require(['./views/data/Data'], resolve),
+    children: [{
+      path: 'table',
+      component: (resolve) => require(['./views/data/components/Table'], resolve),
+    },
+    {
+      path: 'tag',
+      component: (resolve) => require(['./views/data/components/Tag'], resolve),
+    },
+    {
+      path: 'progress',
+      component: (resolve) => require(['./views/data/components/Progress'], resolve),
+    },
+    {
+      path: 'tree',
+      component: (resolve) => require(['./views/data/components/Tree'], resolve),
+    },
+    {
+      path: 'pagination',
+      component: (resolve) => require(['./views/data/components/Pagination'], resolve),
+    },
+    {
+      path: 'badge',
+      component: (resolve) => require(['./views/data/components/Badge'], resolve),
+    }
+    ]
+  },
+  {
+    path: '/notice',
+    name: 'Notice',
+    component: (resolve) => require(['./views/notice/Notice'], resolve),
     children: [
       {
-        path: 'table',
-        component: (resolve) => require(['./views/data/components/Table'], resolve),
+        path: 'alert',
+        component: (resolve) => require(['./views/notice/components/Alert'], resolve)
       },
       {
-        path: 'tag',
-        component: (resolve) => require(['./views/data/components/Tag'], resolve),
-      },
-      {
-        path: 'progress',
-        component: (resolve) => require(['./views/data/components/Progress'], resolve),
-      },
-      {
-        path: 'tree',
-        component: (resolve) => require(['./views/data/components/Tree'], resolve),
-      },
-      {
-        path: 'pagination',
-        component: (resolve) => require(['./views/data/components/Pagination'], resolve),
-      },
-      {
-        path: 'badge',
-        component: (resolve) => require(['./views/data/components/Badge'], resolve),
+        path: 'loading',
+        component: (resolve) => require(['./views/notice/components/Loading'], resolve)
       }
     ]
   }

@@ -31,6 +31,7 @@ html, body {
       <router-link to="/basic">Basic</router-link> |
       <router-link to="/form">Form</router-link> |
       <router-link to="/data">Data</router-link> |  
+      <router-link to="/notice">Notice</router-link> |  
     </div>
     <router-view id="content"/>
   </div>
