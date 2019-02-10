@@ -175,6 +175,10 @@ export default new Router({
       {
         path: 'loading',
         component: (resolve) => require(['./views/notice/components/Loading'], resolve)
+      },
+      {
+        path: 'message',
+        component: (resolve) => require(['./views/notice/components/Message'], resolve)
       }
     ]
   }
