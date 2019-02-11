@@ -183,6 +183,10 @@ export default new Router({
       {
         path: 'messagebox',
         component: (resolve) => require(['./views/notice/components/MessageBox'], resolve)
+      },
+      {
+        path: 'notification',
+        component: (resolve) => require(['./views/notice/components/Notification'], resolve)
       }
     ]
   }
