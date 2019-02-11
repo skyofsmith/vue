@@ -167,28 +167,47 @@ export default new Router({
     path: '/notice',
     name: 'Notice',
     component: (resolve) => require(['./views/notice/Notice'], resolve),
-    children: [
-      {
-        path: 'alert',
-        component: (resolve) => require(['./views/notice/components/Alert'], resolve)
-      },
-      {
-        path: 'loading',
-        component: (resolve) => require(['./views/notice/components/Loading'], resolve)
-      },
-      {
-        path: 'message',
-        component: (resolve) => require(['./views/notice/components/Message'], resolve)
-      },
-      {
-        path: 'messagebox',
-        component: (resolve) => require(['./views/notice/components/MessageBox'], resolve)
-      },
-      {
-        path: 'notification',
-        component: (resolve) => require(['./views/notice/components/Notification'], resolve)
-      }
+    children: [{
+      path: 'alert',
+      component: (resolve) => require(['./views/notice/components/Alert'], resolve)
+    },
+    {
+      path: 'loading',
+      component: (resolve) => require(['./views/notice/components/Loading'], resolve)
+    },
+    {
+      path: 'message',
+      component: (resolve) => require(['./views/notice/components/Message'], resolve)
+    },
+    {
+      path: 'messagebox',
+      component: (resolve) => require(['./views/notice/components/MessageBox'], resolve)
+    },
+    {
+      path: 'notification',
+      component: (resolve) => require(['./views/notice/components/Notification'], resolve)
+    }
     ]
+  },
+  {
+    path: '/navigation',
+    component: (resolve) => require(['./views/navigation/Navigation'], resolve),
+    children: [{
+      path: 'navmenu',
+      component: (resolve) => require(['./views/navigation/components/NavMenu'], resolve)
+    }, {
+      path: 'tabs',
+      component: (resolve) => require(['./views/navigation/components/Tabs'], resolve)
+    }, {
+      path: 'breadcrumb',
+      component: (resolve) => require(['./views/navigation/components/Breadcrumb'], resolve)
+    }, {
+      path: 'dropdown',
+      component: (resolve) => require(['./views/navigation/components/Dropdown'], resolve)
+    }, {
+      path: 'steps',
+      component: (resolve) => require(['./views/navigation/components/Steps'], resolve)
+    }]
   }
   ]
 })

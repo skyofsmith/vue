@@ -30,8 +30,9 @@ html, body {
     <div id="nav">
       <router-link to="/basic">Basic</router-link> |
       <router-link to="/form">Form</router-link> |
-      <router-link to="/data">Data</router-link> |  
-      <router-link to="/notice">Notice</router-link> |  
+      <router-link to="/data">Data</router-link> |
+      <router-link to="/notice">Notice</router-link> |
+      <router-link to="/navigation">Navigation</router-link> |
     </div>
     <router-view id="content"/>
   </div>
