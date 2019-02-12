@@ -33,6 +33,7 @@ html, body {
       <router-link to="/data">Data</router-link> |
       <router-link to="/notice">Notice</router-link> |
       <router-link to="/navigation">Navigation</router-link> |
+      <router-link to="/others">Others</router-link> |
     </div>
     <router-view id="content"/>
   </div>
