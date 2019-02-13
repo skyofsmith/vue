@@ -27,10 +27,10 @@
   <div class="basic">
     <div class="nav">
       <router-link class="nav-item" to="/navigation/navmenu">NavMenu 导航菜单</router-link>
-      <router-link class="nav-item" to="/navigation/loading">Tabs 标签页</router-link>
-      <router-link class="nav-item" to="/navigation/message">Breadcrumb 面包屑</router-link>
-      <router-link class="nav-item" to="/navigation/messagebox">Dropdown 下拉菜单</router-link>
-      <router-link class="nav-item" to="/navigation/notification">Steps 步骤条</router-link>
+      <router-link class="nav-item" to="/navigation/tabs">Tabs 标签页</router-link>
+      <router-link class="nav-item" to="/navigation/breadcrumb">Breadcrumb 面包屑</router-link>
+      <router-link class="nav-item" to="/navigation/dropdown">Dropdown 下拉菜单</router-link>
+      <router-link class="nav-item" to="/navigation/steps">Steps 步骤条</router-link>
     </div>
     <router-view class="content"></router-view>
   </div>
