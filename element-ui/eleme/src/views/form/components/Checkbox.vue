@@ -94,45 +94,45 @@
   </div>
 </template>
 <script>
-const cityOptions = ["上海", "北京", "广州", "深圳"];
+const cityOptions = ['上海', '北京', '广州', '深圳']
 export default {
-  name: "Checkbox",
+  name: 'Checkbox',
   data() {
     return {
       checked: true,
       checked1: false,
       checked2: true,
-      checkList: ["选中且禁用", "复选框 A"],
+      checkList: ['选中且禁用', '复选框 A'],
 
       checkAll: false,
-      checkedCities: ["上海", "北京"],
+      checkedCities: ['上海', '北京'],
       cities: cityOptions,
       isIndeterminate: true,
 
-      checkedCities1: ["上海", "北京"],
-      checkboxGroup1: ["上海"],
-      checkboxGroup2: ["上海"],
-      checkboxGroup3: ["上海"],
-      checkboxGroup4: ["上海"],
+      checkedCities1: ['上海', '北京'],
+      checkboxGroup1: ['上海'],
+      checkboxGroup2: ['上海'],
+      checkboxGroup3: ['上海'],
+      checkboxGroup4: ['上海'],
       checked3: true,
       checked4: false,
       checked5: false,
       checked6: true,
       checkboxGroup5: [],
       checkboxGroup6: []
-    };
+    }
   },
   methods: {
     handleCheckAllChange(val) {
-      this.checkedCities = val ? cityOptions : [];
-      this.isIndeterminate = false;
+      this.checkedCities = val ? cityOptions : []
+      this.isIndeterminate = false
     },
     handleCheckedCitiesChange(value) {
-      let checkedCount = value.length;
-      this.checkAll = checkedCount === this.cities.length;
+      let checkedCount = value.length
+      this.checkAll = checkedCount === this.cities.length
       this.isIndeterminate =
-        checkedCount > 0 && checkedCount < this.cities.length;
+        checkedCount > 0 && checkedCount < this.cities.length
     }
   }
-};
+}
 </script>

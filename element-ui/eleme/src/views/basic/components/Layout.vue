@@ -396,9 +396,9 @@
 
 <script>
 export default {
-  name: "Layout",
+  name: 'Layout',
   data() {
-    return {};
+    return {}
   }
-};
+}
 </script>

@@ -99,9 +99,9 @@ body > .el-container {
 
 <script>
 export default {
-  name: "Container",
+  name: 'Container',
   data() {
-    return {};
+    return {}
   }
-};
+}
 </script>

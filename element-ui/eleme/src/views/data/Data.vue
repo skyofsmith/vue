@@ -39,6 +39,6 @@
 
 <script>
 export default {
-  name: "Data"
-};
+  name: 'Data'
+}
 </script>

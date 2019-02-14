@@ -75,21 +75,21 @@
 </template>
 <script>
 export default {
-  name: "Radio",
+  name: 'Radio',
   data() {
     return {
-      radio: "1",
-      radio1: "选中且禁用",
+      radio: '1',
+      radio1: '选中且禁用',
       radio2: 3,
-      radio3: "上海",
-      radio4: "上海",
-      radio5: "上海",
-      radio6: "上海",
-      radio7: "1",
-      radio8: "1",
-      radio9: "1",
-      radio10: "1"
-    };
+      radio3: '上海',
+      radio4: '上海',
+      radio5: '上海',
+      radio6: '上海',
+      radio7: '1',
+      radio8: '1',
+      radio9: '1',
+      radio10: '1'
+    }
   }
-};
+}
 </script>
