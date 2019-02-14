@@ -175,17 +175,17 @@
 </template>
 <script>
 export default {
-  name: "Dropdown",
+  name: 'Dropdown',
   data() {
-    return {};
+    return {}
   },
   methods: {
     handleClick() {
-      alert("button click");
+      alert('button click')
     },
     handleCommand(command) {
-      this.$message("click on item " + command);
+      this.$message('click on item ' + command)
     }
   }
-};
+}
 </script>
