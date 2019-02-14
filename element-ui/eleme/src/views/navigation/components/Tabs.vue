@@ -156,7 +156,7 @@ export default {
         this.editableTabs = tabs.filter(tab => tab.name !== targetName)
       }
     },
-    addTab(targetName) {
+    addTab() {
       let newTabName = ++this.tabIndex + ''
       this.editableTabs2.push({
         title: 'New Tab',
