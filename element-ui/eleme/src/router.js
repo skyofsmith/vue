@@ -208,6 +208,26 @@ export default new Router({
       path: 'steps',
       component: (resolve) => require(['./views/navigation/components/Steps'], resolve)
     }]
+  },
+  {
+    path: '/other',
+    component: (resolve) => require(['./views/other/Other'], resolve),
+    children: [{
+      path: 'navmenu',
+      component: (resolve) => require(['./views/navigation/components/NavMenu'], resolve)
+    }, {
+      path: 'tabs',
+      component: (resolve) => require(['./views/navigation/components/Tabs'], resolve)
+    }, {
+      path: 'breadcrumb',
+      component: (resolve) => require(['./views/navigation/components/Breadcrumb'], resolve)
+    }, {
+      path: 'dropdown',
+      component: (resolve) => require(['./views/navigation/components/Dropdown'], resolve)
+    }, {
+      path: 'steps',
+      component: (resolve) => require(['./views/navigation/components/Steps'], resolve)
+    }]
   }
   ]
 })
