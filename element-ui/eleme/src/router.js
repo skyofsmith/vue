@@ -210,23 +210,26 @@ export default new Router({
     }]
   },
   {
-    path: '/other',
-    component: (resolve) => require(['./views/other/Other'], resolve),
+    path: '/others',
+    component: (resolve) => require(['./views/others/Others'], resolve),
     children: [{
-      path: 'navmenu',
-      component: (resolve) => require(['./views/navigation/components/NavMenu'], resolve)
+      path: 'dialog',
+      component: (resolve) => require(['./views/others/components/Dialog'], resolve)
     }, {
-      path: 'tabs',
-      component: (resolve) => require(['./views/navigation/components/Tabs'], resolve)
+      path: 'tooltip',
+      component: (resolve) => require(['./views/others/components/Tooltip'], resolve)
     }, {
-      path: 'breadcrumb',
-      component: (resolve) => require(['./views/navigation/components/Breadcrumb'], resolve)
+      path: 'popover',
+      component: (resolve) => require(['./views/others/components/Popover'], resolve)
     }, {
-      path: 'dropdown',
-      component: (resolve) => require(['./views/navigation/components/Dropdown'], resolve)
+      path: 'card',
+      component: (resolve) => require(['./views/others/components/Card'], resolve)
     }, {
-      path: 'steps',
-      component: (resolve) => require(['./views/navigation/components/Steps'], resolve)
+      path: 'carousel',
+      component: (resolve) => require(['./views/others/components/Carousel'], resolve)
+    }, {
+      path: 'collapse',
+      component: (resolve) => require(['./views/others/components/Collapse'], resolve)
     }]
   }
   ]
