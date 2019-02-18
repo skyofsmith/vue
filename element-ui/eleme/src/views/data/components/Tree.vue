@@ -310,56 +310,56 @@ export default {
           ]
         }
       ],
-      data2: [
-        {
-          id: 1,
-          label: '一级 1',
-          children: [
-            {
-              id: 4,
-              label: '二级 1-1',
-              children: [
-                {
-                  id: 9,
-                  label: '三级 1-1-1'
-                },
-                {
-                  id: 10,
-                  label: '三级 1-1-2'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          id: 2,
-          label: '一级 2',
-          children: [
-            {
-              id: 5,
-              label: '二级 2-1'
-            },
-            {
-              id: 6,
-              label: '二级 2-2'
-            }
-          ]
-        },
-        {
-          id: 3,
-          label: '一级 3',
-          children: [
-            {
-              id: 7,
-              label: '二级 3-1'
-            },
-            {
-              id: 8,
-              label: '二级 3-2'
-            }
-          ]
-        }
-      ],
+      // data2: [
+      //   {
+      //     id: 1,
+      //     label: '一级 1',
+      //     children: [
+      //       {
+      //         id: 4,
+      //         label: '二级 1-1',
+      //         children: [
+      //           {
+      //             id: 9,
+      //             label: '三级 1-1-1'
+      //           },
+      //           {
+      //             id: 10,
+      //             label: '三级 1-1-2'
+      //           }
+      //         ]
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     id: 2,
+      //     label: '一级 2',
+      //     children: [
+      //       {
+      //         id: 5,
+      //         label: '二级 2-1'
+      //       },
+      //       {
+      //         id: 6,
+      //         label: '二级 2-2'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     id: 3,
+      //     label: '一级 3',
+      //     children: [
+      //       {
+      //         id: 7,
+      //         label: '二级 3-1'
+      //       },
+      //       {
+      //         id: 8,
+      //         label: '二级 3-2'
+      //       }
+      //     ]
+      //   }
+      // ],
       data3: [
         {
           id: 1,
@@ -475,9 +475,6 @@ export default {
     handleCheckChange(data, checked, indeterminate) {
       console.log(data, checked, indeterminate)
     },
-    handleNodeClick(data) {
-      console.log(data)
-    },
     loadNode(node, resolve) {
       if (node.level === 0) {
         return resolve([{ name: 'region1' }, { name: 'region2' }])
@@ -569,7 +566,7 @@ export default {
       const index = children.findIndex(d => d.id === data.id)
       children.splice(index, 1)
     },
-    renderContent(h, { node, data, store }) {
+    renderContent(h, { node, data }) {
       return (
         <span class="custom-tree-node">
           <span>{node.label}</span>
@@ -588,22 +585,22 @@ export default {
       if (!value) return true
       return data.label.indexOf(value) !== -1
     },
-    handleDragStart(node, ev) {
+    handleDragStart(node) {
       console.log('drag start', node)
     },
-    handleDragEnter(draggingNode, dropNode, ev) {
+    handleDragEnter(draggingNode, dropNode) {
       console.log('tree drag enter: ', dropNode.label)
     },
-    handleDragLeave(draggingNode, dropNode, ev) {
+    handleDragLeave(draggingNode, dropNode) {
       console.log('tree drag leave: ', dropNode.label)
     },
-    handleDragOver(draggingNode, dropNode, ev) {
+    handleDragOver(draggingNode, dropNode) {
       console.log('tree drag over: ', dropNode.label)
     },
-    handleDragEnd(draggingNode, dropNode, dropType, ev) {
+    handleDragEnd(draggingNode, dropNode, dropType) {
       console.log('tree drag end: ', dropNode && dropNode.label, dropType)
     },
-    handleDrop(draggingNode, dropNode, dropType, ev) {
+    handleDrop(draggingNode, dropNode, dropType) {
       console.log('tree drop: ', dropNode.label, dropType)
     },
     allowDrop(draggingNode, dropNode, type) {

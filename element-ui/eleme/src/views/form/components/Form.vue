@@ -434,19 +434,6 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields()
     },
-    submitForm(formName) {
-      this.$refs[formName].validate(valid => {
-        if (valid) {
-          alert('submit!')
-        } else {
-          console.log('error submit!!')
-          return false
-        }
-      })
-    },
-    resetForm(formName) {
-      this.$refs[formName].resetFields()
-    },
     removeDomain(item) {
       var index = this.dynamicValidateForm.domains.indexOf(item)
       if (index !== -1) {

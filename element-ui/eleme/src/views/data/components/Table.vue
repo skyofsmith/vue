@@ -282,7 +282,7 @@
         <el-table-column label="Date" prop="date"></el-table-column>
         <el-table-column label="Name" prop="name"></el-table-column>
         <el-table-column align="right">
-          <template slot="header" slot-scope="scope">
+          <template slot="header">
             <el-input v-model="search" size="mini" placeholder="输入关键字搜索"/>
           </template>
           <template slot-scope="scope">
@@ -363,7 +363,7 @@ export default {
   name: 'Table',
   data() {
     return {
-      tableData: [
+      /* tableData: [
         {
           date: '2016-05-02',
           name: '王小虎',
@@ -384,7 +384,7 @@ export default {
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄'
         }
-      ],
+      ], */
       tableData: [
         {
           date: '2016-05-03',
@@ -441,7 +441,7 @@ export default {
           address: '上海市普陀区金沙江路 1518 弄'
         }
       ],
-      tableData3: [
+      /* tableData3: [
         {
           date: '2016-05-03',
           name: '王小虎',
@@ -477,7 +477,7 @@ export default {
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄'
         }
-      ],
+      ], */
       tableData3: [
         {
           date: '2016-05-03',
@@ -695,7 +695,7 @@ export default {
     }
   },
   methods: {
-    tableRowClassName({ row, rowIndex }) {
+    tableRowClassName({ rowIndex }) {
       if (rowIndex === 1) {
         return 'warning-row'
       } else if (rowIndex === 3) {
@@ -727,7 +727,7 @@ export default {
     handleSelectionChange(val) {
       this.multipleSelection = val
     },
-    formatter(row, column) {
+    formatter(row) {
       return row.address
     },
     resetDateFilter() {
@@ -735,9 +735,6 @@ export default {
     },
     clearFilter() {
       this.$refs.filterTable.clearFilter()
-    },
-    formatter(row, column) {
-      return row.address
     },
     filterTag(value, row) {
       return row.tag === value
@@ -778,7 +775,7 @@ export default {
 
       return sums
     },
-    arraySpanMethod({ row, column, rowIndex, columnIndex }) {
+    arraySpanMethod({ rowIndex, columnIndex }) {
       if (rowIndex % 2 === 0) {
         if (columnIndex === 0) {
           return [1, 2]
@@ -788,7 +785,7 @@ export default {
       }
     },
 
-    objectSpanMethod({ row, column, rowIndex, columnIndex }) {
+    objectSpanMethod({ rowIndex, columnIndex }) {
       if (columnIndex === 0) {
         if (rowIndex % 2 === 0) {
           return {

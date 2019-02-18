@@ -86,7 +86,7 @@ export default {
   name: 'Transfer',
   data() {
     return {
-      data: (_ => {
+      data: (() => {
         const data = []
         for (let i = 1; i <= 15; i++) {
           data.push({
@@ -98,7 +98,7 @@ export default {
         return data
       })(),
       value1: [1, 4],
-      data2: (_ => {
+      data2: (() => {
         const data = []
         const cities = ['上海', '北京', '广州', '深圳', '南京', '西安', '成都']
         const pinyin = ['shanghai', 'beijing', 'guangzhou', 'shenzhen', 'nanjing', 'xian', 'chengdu']
@@ -124,7 +124,7 @@ export default {
           </span>
         )
       },
-      data3: (_ => {
+      data3: (() => {
         const data = []
         for (let i = 1; i <= 15; i++) {
           data.push({

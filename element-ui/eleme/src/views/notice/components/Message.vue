@@ -49,9 +49,6 @@ export default {
         message: h('p', null, [h('span', null, '内容可以是 '), h('i', { style: 'color: teal' }, 'VNode')])
       })
     },
-    open() {
-      this.$message('这是一条消息提示')
-    },
     open2() {
       this.$message({
         message: '恭喜你，这是一条成功消息',
