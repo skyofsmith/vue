@@ -12,9 +12,13 @@ li
 
 a
   color #42b983
+
 .content
   height: 200px
   overflow: auto
+
+  >>> .el-scrollbar__wrap
+    overflow-x: hidden
 </style>
 
 <template>
@@ -51,7 +55,9 @@ a
         <h3>Essential Links</h3>
         <ul>
           <li>
-            <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
+            <a href="https://vuejs.org" target="_blank" rel="noopener"
+              >Core Docs</a
+            >
           </li>
           <li>
             <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
@@ -69,7 +75,9 @@ a
             >
           </li>
           <li>
-            <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
+            <a href="https://news.vuejs.org" target="_blank" rel="noopener"
+              >News</a
+            >
           </li>
         </ul>
         <h3>Ecosystem</h3>
@@ -80,7 +88,9 @@ a
             >
           </li>
           <li>
-            <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
+            <a href="https://vuex.vuejs.org" target="_blank" rel="noopener"
+              >vuex</a
+            >
           </li>
           <li>
             <a
@@ -91,7 +101,10 @@ a
             >
           </li>
           <li>
-            <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
+            <a
+              href="https://vue-loader.vuejs.org"
+              target="_blank"
+              rel="noopener"
               >vue-loader</a
             >
           </li>
