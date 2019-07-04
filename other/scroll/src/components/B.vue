@@ -38,15 +38,19 @@ a
 </template>
 
 <script>
+const toB = function (data) {
+  console.log('b receive: ', data)
+}
 export default {
   name: "B",
   props: {
     msg: String
   },
   mounted() {
-    this.$bus.$on('toB', (data) => {
-      console.log('b receive: ', data)
-    });
+    this.$bus.$on('toB', toB);
+  },
+  beforeDestroy() {
+    this.$bus.off('toB', toB);
   }
 };
 </script>
