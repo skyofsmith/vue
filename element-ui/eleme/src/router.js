@@ -25,6 +25,7 @@ import Upload from './views/form/components/Upload'
 import Rate from './views/form/components/Rate'
 import ColorPicker from './views/form/components/ColorPicker'
 import Transfer from './views/form/components/Transfer'
+import Test from './views/test/test'
 
 Vue.use(Router)
 
@@ -231,6 +232,10 @@ export default new Router({
       path: 'collapse',
       component: (resolve) => require(['./views/others/components/Collapse'], resolve)
     }]
+  },
+  {
+    path: '/test',
+    component: Test
   }
   ]
 })

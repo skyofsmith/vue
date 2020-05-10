@@ -34,6 +34,7 @@ html, body {
       <router-link to="/notice">Notice</router-link> |
       <router-link to="/navigation">Navigation</router-link> |
       <router-link to="/others">Others</router-link> |
+      <router-link to="/test">Test</router-link>
     </div>
     <router-view id="content"/>
   </div>

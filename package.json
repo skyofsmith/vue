@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/skyofsmith/vue/issues"
   },
-  "homepage": "https://github.com/skyofsmith/vue#readme"
+  "homepage": "https://github.com/skyofsmith/vue#readme",
+  "devDependencies": {
+    "sass-loader": "^8.0.2"
+  }
 }
