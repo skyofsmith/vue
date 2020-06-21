@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div id="editor">
-      <p>欢迎使用 wangEditor 富文本编辑器</p>
+      <p>add pic</p>
     </div>
   </div>
 </template>
