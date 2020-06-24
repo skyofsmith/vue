@@ -20,7 +20,7 @@ export default {
       state.count++
     }
     watchEffect(() => {
-      document.body.innerHTML = `count is ${state.count}`
+      document.title = `count is ${state.count}`
     })
     return {
       state, add
