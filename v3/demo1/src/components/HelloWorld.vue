@@ -1,17 +1,20 @@
 <template>
   <div class="hello">
-    {{ state.count }}
     <button @click="add">+</button>
+    {{ state.count }}
+    <br>
+    {{ state.double }}
   </div>
 </template>
 
 <script>
-import { reactive, watchEffect  } from 'vue'
+import { reactive, computed, watchEffect  } from 'vue'
 export default {
   name: 'HelloWorld',
   setup() {
     const state = reactive({
       count: 0,
+      double: computed(() => state.count * 2)
     })
     function add() {
       state.count++

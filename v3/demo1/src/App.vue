@@ -7,7 +7,6 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import { reactive } from 'vue'
 export default {
   name: 'App',
   components: {
