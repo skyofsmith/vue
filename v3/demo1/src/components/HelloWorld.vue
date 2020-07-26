@@ -8,20 +8,26 @@
 </template>
 
 <script>
-import { reactive, computed, watchEffect  } from 'vue'
+import { reactive, computed, watchEffect, onMounted } from 'vue'
 export default {
   name: 'HelloWorld',
   setup() {
     const state = reactive({
       count: 0,
       double: computed(() => state.count * 2)
-    })
+    });
     function add() {
       state.count++
     }
     watchEffect(() => {
+      debugger
       document.title = `count is ${state.count}`
-    })
+    });
+
+    onMounted(() => {
+      console.log('mounted')
+    });
+
     return {
       state, add
     }
