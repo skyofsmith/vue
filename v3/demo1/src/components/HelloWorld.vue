@@ -1,77 +1,44 @@
 <template>
   <div class="hello">
-    <div class="test">
-      <button @click="add">+</button>
-      {{ state.count }}
-      <br>
-      {{ state.double }}
-    </div>
-    <div class="dynamic-attr">
-      <input type="text" @[state.eventName]="func">
-      <select v-model="state.eventName">
-        <option :value="o.value" v-for="o in eventOptions" :key="o.value">{{ o.label }}</option>
-      </select>
-    </div>
-    <div class="child-comp">
-      <child @custom-event="handleCustomEvent" />
-    </div>
+    <button @click="add">+</button>
+    {{ state.count }}
+    <br>
+    {{ state.double }}
   </div>
 </template>
 
 <script>
-import { reactive, computed, watchEffect, onMounted } from 'vue'
-import Child from './Child'
+import { reactive, computed, watchEffect, onMounted, onBeforeMount, onUnmounted, onBeforeUnmount } from 'vue'
 export default {
   name: 'HelloWorld',
-  components: {
-    Child
-  },
   setup() {
     const state = reactive({
-      eventName: 'click',
       count: 0,
       double: computed(() => state.count * 2)
     });
     function add() {
       state.count++
     }
-    function func() {
-      console.log(`${state.eventName} event triggered!`)
-    }
-    function handleCustomEvent({ msg }) {
-      console.log('HelloWorld received! it\'s ' + msg);
-    }
     watchEffect(() => {
+      debugger
       document.title = `count is ${state.count}`
     });
 
+    onBeforeMount(() => {
+      console.log('onBeforeMount')
+    });
     onMounted(() => {
       console.log('mounted')
     });
+    onBeforeUnmount(() => {
+      console.log('onBeforeUnmount')
+    });
+    onUnmounted(() => {
+      console.log('onUnmounted')
+    });
 
     return {
-      state,
-      add,
-      func,
-      handleCustomEvent,
-      eventOptions: [
-        {
-          label: 'click',
-          value: 'click'
-        },
-        {
-          label: 'focus',
-          value: 'focus'
-        },
-        {
-          label: 'blur',
-          value: 'blur'
-        },
-        {
-          label: 'doubleclick',
-          value: 'dblclick'
-        }
-      ],
+      state, add
     }
   }
 }
