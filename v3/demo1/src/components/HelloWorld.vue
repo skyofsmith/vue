@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { reactive, computed, watchEffect, onMounted, onBeforeMount, onUnmounted, onBeforeUnmount } from 'vue'
+import { reactive, computed, watchEffect, onActivated,onBeforeUpdate, onUpdated, onMounted, onBeforeMount, onUnmounted, onBeforeUnmount } from 'vue'
 export default {
   name: 'HelloWorld',
   setup() {
@@ -22,6 +22,16 @@ export default {
     watchEffect(() => {
       debugger
       document.title = `count is ${state.count}`
+    });
+
+    onActivated(() => {
+      console.log('onActivated')
+    });
+    onBeforeUpdate(() => {
+      console.log('onBeforeUpdate')
+    });
+    onUpdated(() => {
+      console.log('onUpdated')
     });
 
     onBeforeMount(() => {

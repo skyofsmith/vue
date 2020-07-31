@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" v-model="state.msg" >
+    <input type="text" v-model="msg" >
     <button @click="clickEvent">emit</button>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
       msg: ''
     })
     return {
-      state,
+      ...state,
       clickEvent
     }
   }
