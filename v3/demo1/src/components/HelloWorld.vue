@@ -4,13 +4,18 @@
     {{ state.count }}
     <br>
     {{ state.double }}
+    <Child />
   </div>
 </template>
 
 <script>
+import Child from './Child'
 import { reactive, computed, watchEffect, onActivated,onBeforeUpdate, onUpdated, onMounted, onBeforeMount, onUnmounted, onBeforeUnmount } from 'vue'
 export default {
   name: 'HelloWorld',
+  components: {
+    Child
+  },
   setup() {
     const state = reactive({
       count: 0,

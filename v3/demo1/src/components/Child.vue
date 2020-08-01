@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{msg}}
     <input type="text" v-model="msg" >
     <button @click="clickEvent">emit</button>
   </div>
