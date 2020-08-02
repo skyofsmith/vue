@@ -3,6 +3,7 @@
     {{msg}}
     <input type="text" v-model="msg" >
     <button @click="clickEvent">emit</button>
+    {{ person }}
   </div>
 </template>
 
@@ -13,6 +14,12 @@ import { reactive
 
 export default {
   name: 'Child',
+  props: {
+    person: {
+      type: Object,
+      default: () => ({})
+    }
+  },
   emits: {
     'custom-event': ({msg}) => {
       return msg && msg.length

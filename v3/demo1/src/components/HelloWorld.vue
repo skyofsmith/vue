@@ -4,7 +4,10 @@
     {{ state.count }}
     <br>
     {{ state.double }}
-    <Child />
+    <hr>
+    <input type="text" v-model="state.obj.name">
+    <input type="text" v-model="state.obj.age">
+    <Child :person="state.obj"/>
   </div>
 </template>
 
@@ -19,13 +22,16 @@ export default {
   setup() {
     const state = reactive({
       count: 0,
+      obj: {
+        name: 'sam',
+        age: 12
+      },
       double: computed(() => state.count * 2)
     });
     function add() {
       state.count++
     }
     watchEffect(() => {
-      debugger
       document.title = `count is ${state.count}`
     });
 
